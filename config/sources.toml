@@ -1,0 +1,90 @@
+# 보안 뉴스 RSS 소스 목록
+# region: "국내" | "해외"   lang: "ko" | "en"
+# kind:   "news" (기사) | "advisory" (기관 보안공지)
+# enabled = false 로 두면 수집에서 제외한다.
+
+[[sources]]
+name = "보안뉴스"
+url = "https://cdn.boannews.com/rss/gn_rss_allArticle.xml"
+region = "국내"
+lang = "ko"
+kind = "news"
+
+[[sources]]
+name = "데일리시큐"
+url = "https://www.dailysecu.com/rss/allArticle.xml"
+region = "국내"
+lang = "ko"
+kind = "news"
+
+[[sources]]
+name = "데이터넷"
+url = "https://www.datanet.co.kr/rss/S1N1.xml"
+region = "국내"
+lang = "ko"
+kind = "news"
+# 보안 외 IT 기사도 섞여 있다. 보안과 무관한 기사는 /secnews 단계에서 거른다.
+
+[[sources]]
+name = "KISA 보호나라"
+url = "https://www.boho.or.kr/kr/rss.do?bbsId=B0000133"
+region = "국내"
+lang = "ko"
+kind = "advisory"
+
+[[sources]]
+name = "The Hacker News"
+url = "https://feeds.feedburner.com/TheHackersNews"
+region = "해외"
+lang = "en"
+kind = "news"
+
+[[sources]]
+name = "BleepingComputer"
+url = "https://www.bleepingcomputer.com/feed/"
+region = "해외"
+lang = "en"
+kind = "news"
+
+[[sources]]
+name = "SecurityWeek"
+url = "https://www.securityweek.com/feed/"
+region = "해외"
+lang = "en"
+kind = "news"
+
+[[sources]]
+name = "Dark Reading"
+url = "https://www.darkreading.com/rss.xml"
+region = "해외"
+lang = "en"
+kind = "news"
+
+[[sources]]
+name = "The Record"
+url = "https://therecord.media/feed"
+region = "해외"
+lang = "en"
+kind = "news"
+
+[[sources]]
+name = "Krebs on Security"
+url = "https://krebsonsecurity.com/feed/"
+region = "해외"
+lang = "en"
+kind = "news"
+
+[[sources]]
+name = "Help Net Security"
+url = "https://www.helpnetsecurity.com/feed/"
+region = "해외"
+lang = "en"
+kind = "news"
+# 신규 보안 제품·오픈소스 도구 소식이 많다.
+
+[[sources]]
+name = "CISA Advisories"
+url = "https://www.cisa.gov/cybersecurity-advisories/all.xml"
+region = "해외"
+lang = "en"
+kind = "advisory"
