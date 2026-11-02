@@ -1,0 +1,51 @@
+# 모듈 이름 → CVE 매칭 규칙
+#
+# keyword    : NVD keywordSearch 에 넣을 검색어 (넓게 가져온 뒤 아래 규칙으로 걸러낸다)
+# cpes       : NVD CPE 의 "vendor:product". 하나라도 맞으면 해당 모듈 CVE 로 본다.
+# products   : CNA 가 적은 affected 제품명 (대소문자 무시, 정확히 일치).
+#              NVD 분석이 밀려 CPE 가 아직 없는 최신 CVE 를 잡기 위해 필요하다.
+# components : 하위 구성요소 모듈 이름. md 의 "관련 구성요소" 섹션에 따로 보여준다.
+#
+# 여기에 없는 모듈은 keyword 로 검색한 뒤 제품명에 그 단어가 들어간 CVE 만 남기고,
+# md 에 "정확도 낮음"으로 표시한다.
+
+[modules.nginx]
+keyword = "nginx"
+cpes = ["f5:nginx", "nginx:nginx", "f5:nginx_open_source"]
+products = ["nginx", "nginx open source"]
+
+[modules.php]
+keyword = "php"
+cpes = ["php:php"]
+products = ["php", "php-src"]
+
+[modules.opnsense]
+keyword = "opnsense"
+cpes = ["opnsense:opnsense", "deciso:opnsense"]
+products = ["opnsense", "opnsense core"]
+components = ["freebsd", "unbound"]
+
+[modules.freebsd]
+keyword = "freebsd"
+cpes = ["freebsd:freebsd"]
+products = ["freebsd"]
+
+[modules.unbound]
+keyword = "unbound"
+cpes = ["nlnetlabs:unbound"]
+products = ["unbound"]
+
+[modules.openssl]
+keyword = "openssl"
+cpes = ["openssl:openssl"]
+products = ["openssl"]
+
+[modules.openssh]
+keyword = "openssh"
+cpes = ["openbsd:openssh"]
+products = ["openssh"]
+
+[modules.apache]
+keyword = "apache http server"
+cpes = ["apache:http_server"]
+products = ["apache http server"]

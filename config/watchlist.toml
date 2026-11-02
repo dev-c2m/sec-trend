@@ -1,0 +1,14 @@
+# 인자 없이 /cve 를 실행하면 점검할 모듈 목록.
+# 버전을 적으면 그 버전에 해당하는 CVE 만 보여준다. 비워 두면 전체 버전.
+
+[[watch]]
+module = "nginx"
+version = ""
+
+[[watch]]
+module = "php"
+version = ""
+
+[[watch]]
+module = "opnsense"
+version = ""

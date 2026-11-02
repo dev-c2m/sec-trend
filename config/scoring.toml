@@ -1,0 +1,25 @@
+# CVE 위험도 등급 기준 (pipeline/scoring.py 가 읽는다)
+#
+# S : CISA KEV 등재, 또는 CISA SSVC exploitation = "active"   → 실제 악용 중
+# A : EPSS >= epss_high, 또는 CVSS >= cvss_critical 이면서 공개 PoC 있음 → 악용 가능성 높음
+# B : CVSS >= cvss_high                                         → High 이상
+# C : 그 외
+#
+# 같은 등급 안에서는 그 등급을 만든 위험 신호가 강한 것부터 정렬한다.
+#   S: 랜섬웨어 악용 → KEV 등재일 최신순
+#   A: EPSS 기준을 넘은 것(EPSS 높은 순) → CVSS+PoC 로 A 가 된 것(공개일 최신순)
+#   B: CVSS 높은 순 → 공개일 최신순
+#   C: 공개일 최신순
+
+epss_high = 0.1
+cvss_critical = 9.0
+cvss_high = 7.0
+
+# 결과 개수와 기간
+top_n = 20
+default_window_days = 30
+# /cve all 에서 실제 악용(S) CVE 를 따로 보여줄 최대 개수
+all_exploited_max = 50
+# 모듈 모드에서 결과가 min_results 보다 적으면 기간을 이 순서대로 넓힌다.
+expand_window_days = [30, 90, 365]
+min_results = 10
