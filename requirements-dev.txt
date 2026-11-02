@@ -1,0 +1,2 @@
+# 런타임은 Python 3.11+ stdlib 만 사용한다. 아래는 테스트용.
+pytest
